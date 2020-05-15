@@ -24,9 +24,10 @@ exports.up = function(knex) {
                 .references('id')
                 .inTable('ingredients')
             tbl.text('unit_of_measurement', 30)
-                .notNullable
+                .notNullable()
             tbl.float('quantity')
                 .unsigned()
+                .notNullable()
             tbl.primary(['recipe_id', 'ingredient_id'])
         })
         // relationship between recipes and steps in one to many
