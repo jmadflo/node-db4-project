@@ -28,6 +28,7 @@ router.get('/:id/shoppinglist', (req, res) => {
         .catch(() => {res.status(500).json({ message: `Shopping list for recipe with an id of ${req.params.id} could not be retrieved`})})
 })
 
+// returns instructions for a recipe with an id of req.params.id
 router.get('/:id/instructions', (req, res) => {
     Recipes.getInstructions(req.params.id)
         .then(instructions => {res.status(201).json(instructions)})
